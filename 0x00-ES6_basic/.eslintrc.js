@@ -6,6 +6,8 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     'plugin:jest/all',
   ],
   globals: {
