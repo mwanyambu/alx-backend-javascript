@@ -12,8 +12,9 @@ app.on('request', (_, res) => {
   res.statusCode = 200;
   res.write(Buffer.from(responseText));
 });
+
 app.listen(PORT, HOST, () => {
   process.stdout.write(`Server listening at -> http://${HOST}:${PORT}\n`);
 });
 
-module.export = app;
+module.exports = app;
