@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-function countStudents(filePath) {
+const countStudents = (filePath) => {
   if (!fs.existsSync(filePath)) {
     throw new Error('Cannot load the database');
   }
-  if (!fs.statSync(filePath)) {
+  if (!fs.statSync(filePath).isFile()) {
     throw new Error('Cannot load the database');
   }
   const fields = fs
@@ -28,7 +28,7 @@ function countStudents(filePath) {
   }
   const totalNum = Object
     .values(groups)
-    .reduce((pre, cur) => (pre || []).length + cur.length, 0);
+    .reduce((pre, cur) => (pre || []).length + cur.length);
   console.log(`Number of students: ${totalNum}`);
   for (const [colm, group] of Object.entries(groups)) {
     const names = group.map((s) => s.firstname).join(', ');
