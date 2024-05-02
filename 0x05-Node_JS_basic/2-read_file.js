@@ -34,6 +34,6 @@ const countStudents = (filePath) => {
     const names = group.map((s) => s.firstname).join(', ');
     console.log(`Number of students in ${colm}: ${group.length}. List: ${names}`);
   }
-}
+};
 
 module.exports = countStudents;
