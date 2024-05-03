@@ -1,9 +1,9 @@
-const http = require('http');
+const express = require('express');
 const fs = require('fs');
 
 const PORT = 1245;
 const HOST = 'localhost';
-const app = http.createServer();
+const app = express();
 const APP_DATA = process.argv.length > 2 ? process.argv[2] : '';
 
 const countStudents = (filePath) => new Promise((resolve, reject) => {
